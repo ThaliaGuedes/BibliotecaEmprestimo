@@ -1,103 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Estilos para o cabeçalho */
-        header {
-            background-color: #007BFF;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
+# Sistema de Biblioteca Java
 
-        /* Estilos para as seções */
-        section {
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f8f8f8;
-        }
+Este é um sistema de biblioteca Java que permite gerenciar leitores, autores, livros e empréstimos. O sistema foi desenvolvido com o objetivo de fornecer funcionalidades básicas para uma biblioteca, incluindo a capacidade de adicionar leitores, autores, livros, realizar empréstimos e listar informações sobre eles.
 
-        /* Estilos para os links */
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
+## Componentes do Código
 
-        /* Estilos para o menu */
-        .menu {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+O sistema é composto por várias partes inter-relacionadas:
 
-        .menu a {
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
+### Conexão com o Banco de Dados
 
-        .menu a:hover {
-            background-color: #007BFF;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Sistema de Biblioteca Java</h1>
-        <p>Gerencie Leitores, Autores, Livros e Empréstimos</p>
-    </header>
+- **ConexaoBanco.java:** Este arquivo define uma classe para estabelecer a conexão com um banco de dados PostgreSQL.
 
-    <section>
-        <h2>Descrição</h2>
-        <p>Este é um sistema de biblioteca Java que permite gerenciar leitores, autores, livros e empréstimos. O sistema foi desenvolvido com o objetivo de fornecer funcionalidades básicas para uma biblioteca, incluindo a capacidade de adicionar leitores, autores, livros, realizar empréstimos e listar informações sobre eles.</p>
-    </section>
+### Classes de Modelo
 
-    <section>
-        <h2>Componentes do Código</h2>
-        <p>O sistema é composto por várias partes inter-relacionadas:</p>
-        <ul>
-            <li>Conexão com o Banco de Dados</li>
-            <li>Classes de Modelo</li>
-            <li>Serviço da Biblioteca</li>
-            <li>Aplicação Principal</li>
-        </ul>
-        <p>Para mais detalhes, consulte o código-fonte.</p>
-    </section>
+- **Autor.java, Emprestimo.java, Leitor.java, Livro.java, Usuario.java:** Essas classes representam objetos de dados, como autores, empréstimos, leitores, livros e usuários. Elas definem a estrutura desses objetos.
 
-    <section>
-        <h2>Funcionalidades Principais</h2>
-        <ul>
-            <li>Adicionar Leitor</li>
-            <li>Listar Leitores</li>
-            <li>Adicionar Livro</li>
-            <li>Listar Livros</li>
-            <li>Realizar Empréstimo</li>
-            <li>Listar Empréstimos</li>
-        </ul>
-        <p>Para mais detalhes sobre como usar cada funcionalidade, consulte o código-fonte.</p>
-    </section>
+### Serviço da Biblioteca
 
-    <section>
-        <h2>Uso</h2>
-        <ol>
-            <li>Compile e execute o programa Java para iniciar a aplicação da biblioteca.</li>
-            <li>Siga as instruções do menu para executar várias operações relacionadas à biblioteca.</li>
-            <li>Certifique-se de que o banco de dados PostgreSQL esteja em execução e configurado corretamente com as credenciais apropriadas.</li>
-        </ol>
-    </section>
+- **BibliotecaService.java:** Este arquivo define um serviço que realiza operações relacionadas à biblioteca, como criar tabelas no banco de dados, adicionar leitores, autores, livros e empréstimos, listar leitores, livros e empréstimos e buscar informações específicas.
 
-    <section>
-        <h2>Observações</h2>
-        <p>O código fornecido é uma estrutura básica para um sistema de biblioteca. Você pode expandi-lo e personalizá-lo de acordo com as necessidades específicas do seu projeto.</p>
-        <p>Este README resume as funcionalidades principais e a estrutura geral do código fornecido. Se você tiver alguma informação adicional que deseja incluir ou se tiver alguma pergunta específica, por favor, me informe.</p>
-    </section>
+### Aplicação Principal
 
-    <footer class="menu">
-        <a href="#top">Voltar ao Topo</a>
-    </footer>
-</body>
-</html>
+- **Main.java:** Este é o componente principal da aplicação. Ele contém o método main que interage com o usuário por meio de um menu de console e utiliza as funcionalidades definidas no serviço da biblioteca para realizar operações no sistema.
+
+## Funcionalidades Principais
+
+- **Adicionar Leitor:** Permite adicionar novos leitores ao sistema com nome, CPF e ID.
+
+- **Listar Leitores:** Lista todos os leitores cadastrados no sistema.
+
+- **Adicionar Livro:** Permite adicionar novos livros ao sistema com título e nome do autor. Se o autor não existir, ele pode ser adicionado.
+
+- **Listar Livros:** Lista todos os livros cadastrados no sistema, incluindo informações sobre o autor.
+
+- **Realizar Empréstimo:** Permite realizar empréstimos de livros para leitores existentes.
+
+- **Listar Empréstimos:** Lista todos os empréstimos realizados, incluindo informações sobre o leitor e o livro.
+
+## Uso
+
+1. Compile e execute o programa Java para iniciar a aplicação da biblioteca.
+2. Siga as instruções do menu para executar várias operações relacionadas à biblioteca.
+3. Certifique-se de que o banco de dados PostgreSQL esteja em execução e configurado corretamente com as credenciais apropriadas.
+
+## Observações
+
+- O código fornecido é uma estrutura básica para um sistema de biblioteca. Você pode expandi-lo e personalizá-lo de acordo com as necessidades específicas do seu projeto.
+- Este README resume as funcionalidades principais e a estrutura geral do código fornecido. Se você tiver alguma informação adicional que deseja incluir ou se tiver alguma pergunta específica, por favor, me informe.
